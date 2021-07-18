@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dns Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Content</th>
+      <th>Ttl</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dns_entries.each do |dns_entry| %>
+      <tr>
+        <td><%= dns_entry.type %></td>
+        <td><%= dns_entry.name %></td>
+        <td><%= dns_entry.content %></td>
+        <td><%= dns_entry.ttl %></td>
+        <td><%= link_to 'Show', dns_entry %></td>
+        <td><%= link_to 'Edit', edit_dns_entry_path(dns_entry) %></td>
+        <td><%= link_to 'Destroy', dns_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dns Entry', new_dns_entry_path %>
+<br>
+<%= link_to "Log out", logout_path, method: "delete" %>

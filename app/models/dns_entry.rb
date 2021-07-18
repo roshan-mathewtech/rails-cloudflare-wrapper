@@ -1,0 +1,2 @@
+class DnsEntry < ApplicationRecord
+end

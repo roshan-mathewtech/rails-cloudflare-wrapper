@@ -1,0 +1,9 @@
+
+<h1>Cloudflare login</h1>
+<%= form_for :cloudfare, url: "login/create" do |f| %>
+  <%= f.label :email, 'Auth-Email' %>
+  <%= f.text_field :email %><br>
+  <%= f.label :token, 'Auth-Token' %>
+  <%= f.text_field :token %>
+  <%= f.submit "Authenticate" %>
+<% end  %>
